@@ -1,3 +1,3 @@
 export default {
-  url: 'http://localhost:3001',
+  url: 'https://api-rho-ebon-85.vercel.app',
 };
