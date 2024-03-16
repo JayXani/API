@@ -4,20 +4,12 @@ import Sequelize from 'sequelize';
 import Student from '../models/Student';
 import User from '../models/User';
 import Picture from '../models/Picture';
+import databaseConfig from '../config/database';
 
 require('dotenv').config();
 
 const allModels = [Student, User, Picture];
-const connection = new Sequelize(
-  process.env.DATABASE,
-  process.env.DATABASE_USERNAME,
-  process.env.DATABASE_PASSWORD,
-  {
-    host: process.env.DATABASE_HOST,
-    port: process.env.DATABASE_PORT,
-    dialect: 'postgres',
-  },
-);
+const connection = new Sequelize(databaseConfig);
 
 allModels.forEach((model) => model.init(connection)); // initialization of all models
 allModels.forEach((model) => model.associate && model.associate(connection.models));
