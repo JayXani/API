@@ -3,13 +3,13 @@ import dotenv from 'dotenv';
 import { resolve } from 'path';
 import cors from 'cors';
 import helmet from 'helmet';
-import './src/database'; // Assim que esse módulo for chamado o index.js do database é executado
+import './database'; // Assim que esse módulo for chamado o index.js do database é executado
 import express from 'express';
-import homeRoutes from './src/routes/homeRoutes';
-import userRouter from './src/routes/userRoutes';
-import tokenRouter from './src/routes/tokenRoutes';
-import studentRoutes from './src/routes/studentRoutes';
-import uploadRoutes from './src/routes/uploadRoutes';
+import homeRoutes from './routes/homeRoutes';
+import userRouter from './routes/userRoutes';
+import tokenRouter from './routes/tokenRoutes';
+import studentRoutes from './routes/studentRoutes';
+import uploadRoutes from './routes/uploadRoutes';
 
 dotenv.config();
 
